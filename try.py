@@ -1,6 +1,7 @@
 import sys, os
 import subprocess
-imp = ['keyboard', 'pyautogui','webbrowser']
+imp = ['speech_recognition', 'googletrans','pyaudio'] # package name to import, name should be exact as fro import. 
+pack = ['SpeechRecognition','googletrans==3.1.0a0','PyAudio'] ###name of package to install package ## Note the package name should be exact as the command requires for pip 
 modules = []
 
 for x in imp:
@@ -10,7 +11,7 @@ for x in imp:
     except ImportError:
         print(f"{x} Not Found")
         print("Installling required packages.........")
-        for x in imp:
+        for x in pack:
             def install(package):
                     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
             install(x)
