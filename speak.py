@@ -1,38 +1,3 @@
-########################### Installing reqiuired packages
-from contextlib import contextmanager
-import sys, os
-import subprocess
-imp = ['pyttsx3', 'selenium==4.1.3']
-modules = []
-
-for x in imp:
-    try:
-        modules.append(__import__(x))
-        print(f"Found {x}.")
-    except:
-        @contextmanager
-        def suppress_stdout():
-            with open(os.devnull, "w") as devnull:
-                old_stdout = sys.stdout
-                sys.stdout = devnull
-            try:  
-                yield
-            finally:
-                sys.stdout = old_stdout
-        print(f"{x} Not Found")
-        print("Installling required packages.........")
-        with suppress_stdout():
-            for x in imp:
-                def install(package):
-                        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-                install(x)
-        print("Packages installed successfully")
-        print("Intiating the script...")
-
-    else:
-        print(f"Facing error while installing {x}")
-
-
 
 
 #### Windows based
@@ -61,8 +26,8 @@ from time import sleep
 
 chrome_options = Options()
 chrome_options.add_argument('--log-level=3')
-chrome_options.headless = False
-Path = "chromedriver.exe"
+chrome_options.headless = True
+Path = "database\chromedriver.exe"
 driver = webdriver.Chrome(Path, options=chrome_options)
 driver.maximize_window()
 
@@ -71,7 +36,7 @@ driver.get(website)
 ButtonSelection = Select(driver.find_element(by=By.XPATH, value= '/html/body/div[4]/div[2]/form/select'))
 ButtonSelection.select_by_visible_text('British English / Brian')
 
-def speak(Text):
+def Speak(Text):
 
     lengthoftext = len(str(Text))
 
