@@ -1,3 +1,4 @@
+
 import nltk 
 from nltk.stem.porter import PorterStemmer
 from torch.utils.data import Dataset,DataLoader
@@ -6,7 +7,7 @@ import json
 import torch
 import numpy as np
 import random
-from features.open import OpenExe
+from open import OpenExe
 
 def TrainTasks():
 
