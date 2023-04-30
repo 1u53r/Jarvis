@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 chrome_options = Options()
 chrome_options.add_experimental_option("detach", True)
+from listen import MicExecution
 from speak import Speak
 
 from Data import Username,Password
@@ -32,9 +33,23 @@ def Instagram():
 
     #Notification
     browser.find_element(By.XPATH,value='/html/body/div[2]/div/div/div[3]/div/div/div[1]/div/div[2]/div/div/div/div/div[2]/div/div/div[3]/button[2]').click()
-    time.sleep(5)
+    time.sleep(3)
 
     Message = browser.find_element(By.XPATH,value='/html/body/div[2]/div/div/div[2]/div/div/div/div[1]/div[1]/div[1]/div/div/div/div/div[2]/div[5]/div/div/a/div/div[2]/div/div')
     Message.click()
-    time.sleep(5)
-# Instagram()
+    time.sleep(2)
+
+    Send_message = browser.find_element(By.XPATH,value="/html/body/div[2]/div/div/div[2]/div/div/div/div[1]/div[1]/div[2]/section/div/div/div/div[1]/div[1]/div/div[3]/div/div/div/div/div[2]/div/div[1]/div/div/div[2]/div/div[3]/div")
+    Send_message.click()
+    time.sleep(1)
+
+    Type_message= browser.find_element(By.XPATH,value="/html/body/div[2]/div/div/div[2]/div/div/div/div[1]/div[1]/div[2]/section/div/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[1]/p")
+    Type_message.click()
+    Speak("sir, what should I send him?")
+    message = MicExecution().lower()
+    Type_message.send_keys(message)
+
+    Type_message_send = browser.find_element(By.XPATH,value="/html/body/div[2]/div/div/div[2]/div/div/div/div[1]/div[1]/div[2]/section/div/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div/div/div[2]/div/div/div[3]")
+    Type_message_send.click()
+    Speak("message done sir")
+Instagram()
