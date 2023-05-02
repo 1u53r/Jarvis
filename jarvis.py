@@ -82,15 +82,12 @@ def MainExecution():
 
 def wake_up():
     query = Listen().lower()
-    
+
     if "wake up" in query:
-        print("waking up")
-        MainExecution()
-    
-    if "wake up" in query:
-        print("waking up")
-        MainExecution()
+            print("waking up")
+            MainExecution()
+
     else:
-        pass
+            pass
 
 wake_up()
