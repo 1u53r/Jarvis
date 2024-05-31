@@ -1,5 +1,3 @@
-
-
 import speech_recognition as sr
 from googletrans import Translator
 # googletrans==3.1.0a0
@@ -42,4 +40,4 @@ def MicExecution():
     return data
 
 # MicExecution()
-# Listen()
+Listen()
