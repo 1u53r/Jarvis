@@ -50,5 +50,3 @@ def Speak(Text):
 
         else:
             sleep(2)
-
-Speak("Hi sir I am back")
