@@ -2,7 +2,7 @@
 
 # API key
 
-fileopen = open("Data\\Api.txt","r")
+fileopen = open("/home/luser/Documents/code/Jarvis/Data/Api.txt","r")
 API = fileopen.read()
 fileopen.close()
 
@@ -17,7 +17,7 @@ load_dotenv()
 completion = openai.Completion()
 
 def ReplyBrain(question,chat_log = None):
-    FileLog = open("database\\chat_log.txt","r")
+    FileLog = open("/home/luser/Documents/code/Jarvis/database/chat_log.txt","r")
     chat_log_template = FileLog.read()
     FileLog.close()
 
@@ -36,7 +36,7 @@ def ReplyBrain(question,chat_log = None):
     answer = response.choices[0].text.strip()
     chat_log_template_update = chat_log_template + f"\nYou : {question} \nJarvis : {answer}"
 
-    FileLog = open("database\\chat_log.txt","w")
+    FileLog = open("/home/luser/Documents/code/Jarvis/database/chat_log.txt","w")
     FileLog .write(chat_log_template_update)
     FileLog.close()
     return answer
