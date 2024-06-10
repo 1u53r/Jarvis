@@ -28,7 +28,7 @@ chrome_options = Options()
 chrome_options.add_argument('--log-level=3')
 chrome_options.headless = True
 Path = "database\chromedriver.exe"
-driver = webdriver.Chrome(Path, options=chrome_options)
+driver = webdriver.Chrome(options=chrome_options)
 driver.maximize_window()
 
 website =  r"https://ttsmp3.com/text-to-speech/British%20English/"
@@ -68,3 +68,5 @@ def Speak(Text):
 
         else:
             sleep(2)
+
+Speak("i am Jarvis")

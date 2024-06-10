@@ -41,3 +41,7 @@ def MicExecution():
     data = TranslationHinToEng(query)
     print(data)
     return data
+
+
+result = MicExecution()
+print(result)

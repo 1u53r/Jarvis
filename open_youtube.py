@@ -1,7 +1,7 @@
 
 
 import webbrowser
-from speak import Speak
+from body.speak import Speak
 from body.listen import MicExecution
 
 def Play_youtube():
@@ -18,3 +18,5 @@ def Play_youtube():
     res = req.execute()
     urlad = res['items'][0]['id']['videoId']    
     webbrowser.open("https://www.youtube.com/watch?v=" + urlad)
+
+Play_youtube()
