@@ -42,6 +42,8 @@ def MicExecution():
     else:
         return "No input received."
 
-# Redirecting standard error stream to /dev/null to suppress ALSA messages
-command = "/home/luser/Documents/code/Jarvis/bin/python /home/luser/Documents/code/Jarvis/body/listen.py 2>/dev/null"
-subprocess.call(command, shell=True)
+# # Redirecting standard error stream to /dev/null to suppress ALSA messages
+# command = "/home/luser/Documents/code/Jarvis/bin/python /home/luser/Documents/code/Jarvis/body/listen.py 2>/dev/null"
+# subprocess.call(command, shell=True)
+
+MicExecution()
