@@ -18,5 +18,3 @@ def Play_youtube():
     res = req.execute()
     urlad = res['items'][0]['id']['videoId']    
     webbrowser.open("https://www.youtube.com/watch?v=" + urlad)
-
-Play_youtube()

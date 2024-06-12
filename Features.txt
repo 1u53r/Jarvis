@@ -1,0 +1,11 @@
+Listen
+Speak
+Understand
+keep the context and talk properly
+should be able to tell what I am showing it
+should be able to train itself from last conversations
+should be able to provide valuable insites and summaries of given data
+make VOIP calls
+Should be able to send whatsapp and instagram messages
+should be able to changes to stories can make changes to the calender
+

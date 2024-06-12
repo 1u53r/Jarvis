@@ -1,8 +1,6 @@
 import subprocess
 import speech_recognition as sr
 from googletrans import Translator
-#it shouold be same as pip install googletrans==4.0.0-rc1
-
 
 def Listen():
     r = sr.Recognizer()
@@ -31,7 +29,7 @@ def Listen():
 def TranslationHinToEng(Text):
     line = str(Text)
     translate = Translator()
-    result = translate.translate(line,dest='en')
+    result = translate.translate(line)
     data = result.text
     print(f"Translated text: {data}")
     return data
@@ -43,3 +41,9 @@ def MicExecution():
         return data
     else:
         return "No input received."
+
+# Redirecting standard error stream to /dev/null to suppress ALSA messages
+command = "/home/luser/Documents/code/Jarvis/bin/python3 /home/luser/Documents/code/Jarvis/body/listen.py 2>/dev/null"
+subprocess.call(command, shell=True)
+
+MicExecution()
